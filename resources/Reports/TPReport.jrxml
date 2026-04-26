@@ -1,0 +1,190 @@
+<!-- Created with Jaspersoft Studio version 7.0.3.final using JasperReports Library version 7.0.3-41034ca841d452f3305ba55b9042260aaa1ab5dd  -->
+<jasperReport name="Blank_A4" language="java" columnCount="1" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1c1dc3cb-8471-4b75-a96f-fea6efdcc5ff">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ex3_database_2025_RT"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="DentistID" class="java.lang.Integer"/>
+	<query language="sql"><![CDATA[SELECT 
+  TP.TreatmentPlanID        AS TreatmentPlanID,
+  S.StaffID                 AS DentistID,
+  R.RoleID,
+  R.RoleName,
+  P.FirstName               AS PatientFirstName,
+  P.LastName                AS PatientLastName,
+  TP.StartDate,
+  TP.Status,
+  T.TreatmentType,
+  T.TreatmentPhase,
+  S.FirstName               AS DentistFirstName,
+  S.LastName                AS DentistLastName,
+  
+  (SELECT MIN(TP2.StartDate)
+   FROM TreatmentPlan TP2
+   WHERE TP2.StartDate > TP.StartDate) AS UpcomingTreatment
+
+FROM Treatment T
+  JOIN Staff S         ON T.StaffID = S.StaffID
+  JOIN Role R          ON S.RoleID = R.RoleID
+  JOIN TreatmentPlan TP ON T.TreatmentPlanID = TP.TreatmentPlanID
+  JOIN Patient P       ON TP.PatientID = P.PatientID
+
+WHERE
+  S.StaffID = $P{DentistID}
+  AND R.RoleID = 1
+  AND TP.Status = 'Active'
+]]></query>
+	<field name="TreatmentPlanID" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="TreatmentPlanID"/>
+		<property name="com.jaspersoft.studio.field.label" value="TreatmentPlanID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="TreatmentPlan"/>
+	</field>
+	<field name="DentistID" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="StaffID"/>
+		<property name="com.jaspersoft.studio.field.label" value="DentistID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Staff"/>
+	</field>
+	<field name="RoleID" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="RoleID"/>
+		<property name="com.jaspersoft.studio.field.label" value="RoleID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Role"/>
+	</field>
+	<field name="RoleName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="RoleName"/>
+		<property name="com.jaspersoft.studio.field.label" value="RoleName"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Role"/>
+	</field>
+	<field name="PatientFirstName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="FirstName"/>
+		<property name="com.jaspersoft.studio.field.label" value="PatientFirstName"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Patient"/>
+	</field>
+	<field name="PatientLastName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="LastName"/>
+		<property name="com.jaspersoft.studio.field.label" value="PatientLastName"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Patient"/>
+	</field>
+	<field name="StartDate" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="StartDate"/>
+		<property name="com.jaspersoft.studio.field.label" value="StartDate"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="TreatmentPlan"/>
+	</field>
+	<field name="Status" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Status"/>
+		<property name="com.jaspersoft.studio.field.label" value="Status"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="TreatmentPlan"/>
+	</field>
+	<field name="TreatmentType" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="TreatmentType"/>
+		<property name="com.jaspersoft.studio.field.label" value="TreatmentType"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Treatment"/>
+	</field>
+	<field name="TreatmentPhase" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="TreatmentPhase"/>
+		<property name="com.jaspersoft.studio.field.label" value="TreatmentPhase"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Treatment"/>
+	</field>
+	<field name="DentistFirstName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="FirstName"/>
+		<property name="com.jaspersoft.studio.field.label" value="DentistFirstName"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Staff"/>
+	</field>
+	<field name="DentistLastName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="LastName"/>
+		<property name="com.jaspersoft.studio.field.label" value="DentistLastName"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Staff"/>
+	</field>
+	<field name="UPCOMINGTREATMENT" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="UPCOMINGTREATMENT"/>
+		<property name="com.jaspersoft.studio.field.label" value="UPCOMINGTREATMENT"/>
+	</field>
+	<background splitType="Stretch"/>
+	<title height="115" splitType="Stretch">
+		<element kind="staticText" uuid="6b9a23dd-ffbd-46a3-9954-2b07317c0db2" mode="Transparent" x="-11" y="30" width="820" height="72" forecolor="#0E1F26" backcolor="#FFFFFF" fontName="Times New Roman" fontSize="47.0" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Treatment Progress Report]]></text>
+		</element>
+		<element kind="line" uuid="225d5258-cdff-4e43-9a66-4830d0f1551a" x="130" y="100" width="569" height="1" forecolor="#DAA520"/>
+	</title>
+	<pageHeader height="57" splitType="Stretch">
+		<element kind="textField" uuid="4958013a-f7bf-43b7-9e42-ef16e94ac802" x="270" y="12" width="108" height="35" forecolor="#0E1F26" fontSize="19.0" pattern="dd/MM/yyyy" hTextAlign="Center" vTextAlign="Middle">
+			<expression><![CDATA[new java.util.Date()]]></expression>
+		</element>
+		<element kind="staticText" uuid="cc505345-09b0-4b22-b204-5cba0a0c3c44" x="190" y="11" width="80" height="35" forecolor="#0E1F26" fontSize="21.0" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Date :]]></text>
+		</element>
+		<element kind="staticText" uuid="07747404-3643-44ef-b011-3a05637f1065" x="400" y="11" width="110" height="35" forecolor="#0E1F26" fontSize="21.0" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Dentist ID :]]></text>
+		</element>
+		<element kind="textField" uuid="3fea1e11-df61-4520-8496-1798675fb7ef" x="510" y="12" width="129" height="35" forecolor="#0E1F26" fontSize="21.0" vTextAlign="Middle">
+			<expression><![CDATA[((Number)$P{DentistID}).intValue()
+]]></expression>
+		</element>
+	</pageHeader>
+	<columnHeader height="62" splitType="Stretch">
+		<element kind="staticText" uuid="0cb5ceb6-e790-46b5-87d3-08fc2d8c206a" mode="Transparent" x="10" y="2" width="120" height="39" forecolor="#0E1F26" backcolor="#FFFFFF" fontSize="13.0" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[TreatmentPlane ID]]></text>
+		</element>
+		<element kind="staticText" uuid="e74d0a59-56a2-4541-818a-f1ec4dd501a7" mode="Transparent" x="130" y="2" width="120" height="39" forecolor="#0E1F26" backcolor="#0E1F26" fontSize="13.0" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Patient Name]]></text>
+		</element>
+		<element kind="staticText" uuid="da47c111-8e96-41a6-af39-80b7013413ec" mode="Transparent" x="250" y="2" width="80" height="39" forecolor="#0E1F26" backcolor="#0E1F26" fontSize="13.0" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Start Date]]></text>
+		</element>
+		<element kind="staticText" uuid="065cdfc1-1818-405f-8e8a-f362806a988c" mode="Transparent" x="330" y="2" width="90" height="39" forecolor="#0E1F26" backcolor="#0E1F26" fontSize="13.0" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Plane Status]]></text>
+		</element>
+		<element kind="staticText" uuid="bac738d7-1a85-45fe-84df-9560749cd723" mode="Transparent" x="418" y="2" width="100" height="39" forecolor="#0E1F26" backcolor="#0E1F26" fontSize="13.0" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Treatment Type]]></text>
+		</element>
+		<element kind="staticText" uuid="ef24d69e-013a-4f66-b91c-4236e1501d98" mode="Transparent" x="659" y="2" width="141" height="39" forecolor="#0E1F26" backcolor="#0E1F26" fontSize="13.0" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Upcoming Treatment]]></text>
+		</element>
+		<element kind="line" uuid="afd1f166-421e-47c5-b967-a0b80e054dbb" x="9" y="-1" width="790" height="2" forecolor="#DAA520"/>
+		<element kind="staticText" uuid="9e997041-3168-45b8-a258-03af5718d663" x="530" y="1" width="129" height="40" fontSize="14.0" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Treatment Phase]]></text>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="52" splitType="Stretch">
+			<element kind="textField" uuid="7efc9b06-932d-49b3-81c8-e1755edd4d74" x="330" y="0" width="80" height="30" fontSize="14.0" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{Status}]]></expression>
+			</element>
+			<element kind="textField" uuid="fef26d66-f00f-422f-ae9a-b64a41241ee6" x="20" y="0" width="100" height="30" fontSize="14.0" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{TreatmentPlanID}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="febf418b-a551-4861-bc65-71b1e1955312"/>
+			</element>
+			<element kind="textField" uuid="5a61c3ff-ee46-411b-a407-2a3cd208cb1d" x="130" y="0" width="120" height="30" fontSize="14.0" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{PatientFirstName} + " " + $F{PatientLastName}]]></expression>
+			</element>
+			<element kind="textField" uuid="b1e04a48-cd23-42fe-b584-d2e509c32e13" x="250" y="0" width="80" height="30" fontSize="14.0" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{StartDate}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="74eb48bd-d2d4-40d1-a8e8-ac1a87de6d86"/>
+			</element>
+			<element kind="textField" uuid="0048512a-e43d-462f-b3d9-2183a1b008cb" x="418" y="0" width="100" height="30" fontSize="14.0" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{TreatmentType}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="aa2a3148-d51c-483b-9d4b-b72784dfb3b9"/>
+			</element>
+			<element kind="textField" uuid="933b60f4-d0f4-4ab9-93aa-87c4def05a5c" x="680" y="0" width="100" height="30" fontSize="13.0" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{UPCOMINGTREATMENT}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="32a53e22-f4b5-492f-91ac-d11d2b600e0d"/>
+			</element>
+			<element kind="line" uuid="bf816136-4eb7-4134-aaf0-4f3b2cf7a66f" x="10" y="-10" width="788" height="1" forecolor="#DAA520"/>
+			<element kind="line" uuid="ec7afdc4-df9c-4c9d-8210-d5b570ab37d2" x="9" y="40" width="788" height="1" forecolor="#DAA520"/>
+			<element kind="line" uuid="cf24de02-a0b3-4fd2-b7e1-e8cdc601febc" x="9" y="-63" width="1" height="103" forecolor="#DAA520"/>
+			<element kind="line" uuid="fe47b521-af71-4997-bdde-9c1fbb6eec18" x="797" y="-64" width="1" height="105" forecolor="#DAA520"/>
+			<element kind="textField" uuid="3230eb9e-da56-403b-b57f-7d79c82dc69a" x="529" y="0" width="151" height="30" fontSize="13.0" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{TreatmentPhase}]]></expression>
+			</element>
+		</band>
+	</detail>
+	<columnFooter height="59" splitType="Stretch"/>
+	<pageFooter height="54" splitType="Stretch"/>
+	<summary height="42" splitType="Stretch"/>
+</jasperReport>

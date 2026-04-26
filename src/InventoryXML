@@ -1,0 +1,27 @@
+
+
+<InventoryItems>
+    <InventoryItem>
+        <InventoryItemID>200</InventoryItemID>
+        <ItemName>Dental Mirror</ItemName>
+        <Description>Mirror for intraoral use</Description>
+        <CategoryID>2</CategoryID>
+        <QuantityInStock>100</QuantityInStock>
+        <SupplierID>5</SupplierID>
+        <ExpirationDate>2025-12-31</ExpirationDate>
+        <SerialNumber>DMIRR-001-A</SerialNumber>
+    </InventoryItem>
+    
+    
+    <InventoryItem>
+        <InventoryItemID>2</InventoryItemID>
+        <ItemName>Disposable Gloves</ItemName>
+        <Description>Nitrile gloves (medium)</Description>
+        <CategoryID>3</CategoryID>
+        <QuantityInStock>500</QuantityInStock>
+        <SupplierID>7</SupplierID>
+        <ExpirationDate>2026-06-15</ExpirationDate>
+        <SerialNumber>GLV-NM-2025</SerialNumber>
+    </InventoryItem>
+</InventoryItems>
+

@@ -1,0 +1,17 @@
+ 
+
+<Suppliers>
+    <Supplier>
+        <SupplierID>1000</SupplierID>
+        <SupplierName>Alpha Dental Supplies</SupplierName>
+        <ContactInformation>contact@alphadental.com</ContactInformation>
+    </Supplier>
+    
+    
+    <Supplier>
+        <SupplierID>102</SupplierID>
+        <SupplierName>Beta Medical Equipment</SupplierName>
+        <ContactInformation>support@betaequipment.com</ContactInformation>
+    </Supplier>
+</Suppliers>
+

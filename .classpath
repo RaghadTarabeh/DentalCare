@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-22">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry excluding="Reports/|Reports/" kind="src" path="src"/>
+	<classpathentry kind="src" path="resources"/>
+	<classpathentry kind="lib" path="lib/commons-beanutils-1.9.4.jar"/>
+	<classpathentry kind="lib" path="lib/commons-collections-3.2.2.jar"/>
+	<classpathentry kind="lib" path="lib/commons-collections4-4.4.jar"/>
+	<classpathentry kind="lib" path="lib/commons-digester-2.1.jar"/>
+	<classpathentry kind="lib" path="lib/groovy-all-2.4.5.jar"/>
+	<classpathentry kind="lib" path="lib/ucanaccess-5.0.1.jar"/>
+	<classpathentry kind="lib" path="lib/commons-lang3-3.8.1.jar"/>
+	<classpathentry kind="lib" path="lib/ucanload.jar"/>
+	<classpathentry kind="lib" path="lib/jackcess-3.0.1.jar"/>
+	<classpathentry kind="lib" path="lib/jars/ecj-4.6.jar"/>
+	<classpathentry kind="lib" path="lib/jars/jackson-databind-2.13.3.jar"/>
+	<classpathentry kind="lib" path="lib/jars/jasperreports-7.0.3.jar"/>
+	<classpathentry kind="lib" path="lib/jars/jasperreports-annotation-processors-7.0.3.jar"/>
+	<classpathentry kind="lib" path="lib/jars/jasperreports-ant-7.0.3.jar"/>
+	<classpathentry kind="lib" path="lib/jars/jasperreports-barbecue-7.0.3.jar"/>
+	<classpathentry kind="lib" path="lib/jars/jasperreports-barcode4j-7.0.3.jar"/>
+	<classpathentry kind="lib" path="lib/jars/jasperreports-castor-7.0.3.jar"/>
+	<classpathentry kind="lib" path="lib/jars/jasperreports-chart-customizers-7.0.3.jar"/>
+	<classpathentry kind="lib" path="lib/jars/jasperreports-charts-7.0.3.jar"/>
+	<classpathentry kind="lib" path="lib/jars/jasperreports-chart-themes-7.0.3.jar"/>
+	<classpathentry kind="lib" path="lib/jars/jasperreports-data-adapters-7.0.3.jar"/>
+	<classpathentry kind="lib" path="lib/jars/jasperreports-data-adapters-http-7.0.3.jar"/>
+	<classpathentry kind="lib" path="lib/jars/jasperreports-ejbql-7.0.3.jar"/>
+	<classpathentry kind="lib" path="lib/jars/jasperreports-ejbql-j2ee-7.0.3.jar"/>
+	<classpathentry kind="lib" path="lib/jars/jasperreports-excel-poi-7.0.3.jar"/>
+	<classpathentry kind="lib" path="lib/jars/jasperreports-fastexcel-7.0.3.jar"/>
+	<classpathentry kind="lib" path="lib/jars/jasperreports-fonts-7.0.3.jar"/>
+	<classpathentry kind="lib" path="lib/jars/jasperreports-functions-7.0.3.jar"/>
+	<classpathentry kind="lib" path="lib/jars/jasperreports-groovy-7.0.3.jar"/>
+	<classpathentry kind="lib" path="lib/jars/jasperreports-hibernate-7.0.3.jar"/>
+	<classpathentry kind="lib" path="lib/jars/jasperreports-hibernate-j2ee-7.0.3.jar"/>
+	<classpathentry kind="lib" path="lib/jars/jasperreports-javascript-7.0.3.jar"/>
+	<classpathentry kind="lib" path="lib/jars/jasperreports-jaxen-7.0.3.jar"/>
+	<classpathentry kind="lib" path="lib/jars/jasperreports-jdt-7.0.3.jar"/>
+	<classpathentry kind="lib" path="lib/jars/jasperreports-json-7.0.3.jar"/>
+	<classpathentry kind="lib" path="lib/jars/jasperreports-metadata-7.0.3.jar"/>
+	<classpathentry kind="lib" path="lib/jars/jasperreports-olap-7.0.3.jar"/>
+	<classpathentry kind="lib" path="lib/jars/jasperreports-pdf-7.0.3.jar"/>
+	<classpathentry kind="lib" path="lib/jars/jasperreports-servlets-7.0.3.jar"/>
+	<classpathentry kind="lib" path="lib/jars/jasperreports-servlets-j2ee-7.0.3.jar"/>
+	<classpathentry kind="lib" path="lib/jars/jasperreports-xalan-7.0.3.jar"/>
+	<classpathentry kind="lib" path="lib/jars/jfreechart-1.5.3.jar"/>
+	<classpathentry kind="lib" path="lib/hsqldb-2.5.0.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="lib/jasperreports-spring-7.0.3.jar"/>
+	<classpathentry kind="lib" path="/ex3-dentalcare-r-t/DentalCare/lib/jasperreports-spring-7.0.1.jar"/>
+	<classpathentry kind="lib" path="/ex3-dentalcare-r-t/DentalCare/lib/spring-beans-5.3.30.jar"/>
+	<classpathentry kind="lib" path="/ex3-dentalcare-r-t/DentalCare/lib/spring-context-5.3.30.jar"/>
+	<classpathentry kind="lib" path="/ex3-dentalcare-r-t/DentalCare/lib/spring-core-5.3.30.jar"/>
+	<classpathentry kind="lib" path="/ex3-dentalcare-r-t/DentalCare/lib/spring-expression-5.3.30.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
